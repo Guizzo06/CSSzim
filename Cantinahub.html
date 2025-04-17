@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="cantina" content="width=device-width, initial-scale=1.0">
+  <title>Exercício de CSS - Menu com Submenu</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: white;
+      background-color: #c4c2c2;
+      background-image: url('css_04/img/fundo.webp');
+    }
+
+    header {
+      background-color: #09342b;
+      color: white;
+      padding: 1em;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #444;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav li {
+      position: relative;
+    }
+
+    nav a {
+      color: white;
+      padding: 1em;
+      display: block;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #18866d;
+      color: #0f0e0e;
+    }
+
+    /* Submenu */
+    nav li ul {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #0d4b3d;
+      flex-direction: column;
+      min-width: 100px;
+      z-index: 1;
+    }
+    nav li ul li a:hover{
+      background-color: #18866c6c;
+    }
+
+    nav li:hover ul {
+      display: flex;
+    }
+
+    nav li ul li a {
+      padding: 0.8em 1em;
+    }
+
+    main {
+      padding: 2em;
+    }
+
+    /* Estilo para a seção Sobre */
+    .sobre {
+      background-color: #09342b;
+      color:#ffffff ;
+      padding: 1.5em;
+      margin-bottom: 2em;
+      border-radius: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .cardapio {
+      background-color: #09342b; 
+      color:#ffffff ;
+      padding: 1.5em;
+      font-family:Courier;
+      margin-bottom: 2em;
+      border-radius: 20px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Estilo para a seção de imagens */
+    .galeria {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      /*gap: 1em;*/
+      margin-bottom: 2em;
+    }
+
+    .galeria img {
+      width: 230px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 20px; /* Cantos arredondados */
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .galeria img:hover {
+      transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+      transform: translate(4px, 8px)
+    }
+
+    footer {
+      background-color: #18866d;
+      color: white;
+      text-align: center;
+      padding: 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    h1{
+      font-family:Lucida Sans;
+    }
+    samp{
+      color:#1f0942;
+      font-family: Lucida Sans;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="css_04/img/images.jfif" width="150" height="150">
+    <h1>Cantina</h1>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#">Início</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li>
+        <a href="#">Serviços</a>
+        <ul>
+          <li><a href="#">Consultoria</a></li>
+          <li><a href="#">Treinamentos</a></li>
+          <li><a href="#">Suporte</a></li>
+        </ul>
+      </li>
+      <li><a href="Contato.html">Contato</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <h2>Bem-vindo!</h2>
+    <p>Este é o conteúdo principal da sua página. Utilize os menus acima para navegar atraves da cantina.</p>
+
+    <!-- Seção Sobre -->
+    <div class="sobre">
+      <h3>Sobre Nós</h3>
+      <p>
+        Somos uma Cantina dedicada a oferecer soluções suculentas para nossos clientes.
+        Nossa missão é transformar ingredientes em guloseimas de qualidade e delicias.
+      </p>
+    </div>
+
+    <!-- Seção Galeria de Imagens -->
+    <div class="galeria">
+      <img src="css_04/img/cantina_maristasantamaria.jfif">
+      <img src="css_04/img/pessoas.webp">
+      <img src="css_04/img/cria.jpeg">
+      <img src="css_04/img/ham.jfif">
+    </div>
+
+    <div class="cardapio">
+      <h1>Cardapio</h1>
+      <img src="css_04/img/cardapio.jpeg">
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 <samp>Guibas</samp>. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>     
